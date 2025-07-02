@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Import this
+import { useNavigate } from "react-router-dom"; //  Import this
 
 const ForgotPassword = () => {
   const [inputValue, setInputValue] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
-  const navigate = useNavigate(); // ✅ Initialize navigate
+  const navigate = useNavigate(); //  Initialize navigate
 
   const handleSearch = () => {
     if (inputValue.trim() === "") {
@@ -21,7 +21,7 @@ const ForgotPassword = () => {
   const handleCancel = () => {
     setInputValue("");
     setErrorMsg("");
-    navigate("/"); // ✅ Navigate back to login
+    navigate("/"); //  Navigate back to login
   };
 
   return (
@@ -47,13 +47,13 @@ const ForgotPassword = () => {
         <div className="flex justify-center gap-4">
           <button
             onClick={handleCancel}
-            className="bg-gray-200 text-gray-800 px-6 py-2 rounded-full"
+            className="bg-gray-200 text-gray-800 px-6 py-2 rounded-full hover:bg-gray-400 transition"
           >
             Cancel
           </button>
           <button
             onClick={handleSearch}
-            className="bg-blue-700 text-white px-6 py-2 rounded-full"
+            className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
           >
             Search
           </button>
