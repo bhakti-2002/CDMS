@@ -1,1 +1,27 @@
-<h1>Continue With Google</h1>
+import React from 'react';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+
+const GoogleSignIn = () => {
+  const handleSuccess = (credentialResponse) => {
+    console.log("Google Sign In Success", credentialResponse);
+  };
+
+  const handleError = () => {
+    console.log("Google Sign In Error");
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center mt-8">
+      <h1 className="text-2xl font-bold text-blue-500 mb-4">Google Sign-In</h1>
+
+      <GoogleOAuthProvider clientId="338736050338-p45edhtf3sn7ceak7u81l085u8ovebds.apps.googleusercontent.com">
+        <GoogleLogin 
+          onSuccess={handleSuccess}
+          onError={handleError}
+        />
+      </GoogleOAuthProvider>
+    </div>
+  );
+};
+
+export default GoogleSignIn;
