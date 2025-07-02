@@ -1,17 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Import this
 
 const ForgotPassword = () => {
   const [inputValue, setInputValue] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const navigate = useNavigate(); // ✅ Initialize navigate
 
   const handleSearch = () => {
-    // Simulate no search results
     if (inputValue.trim() === "") {
       setErrorMsg(
         "No Search results. Your search did not match any results. Please try again with valid Email/Mobile Number"
       );
     } else {
-      // Simulate always showing no results for now
       setErrorMsg(
         "No Search results. Your search did not match any results. Please try again with valid Email/Mobile Number"
       );
@@ -21,6 +21,7 @@ const ForgotPassword = () => {
   const handleCancel = () => {
     setInputValue("");
     setErrorMsg("");
+    navigate("/"); // ✅ Navigate back to login
   };
 
   return (
@@ -39,7 +40,6 @@ const ForgotPassword = () => {
           onChange={(e) => setInputValue(e.target.value)}
         />
 
-        {/* Show error message if exists */}
         {errorMsg && (
           <p className="text-red-500 text-sm mb-4">{errorMsg}</p>
         )}
