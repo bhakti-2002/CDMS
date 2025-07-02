@@ -18,7 +18,7 @@ const GoogleSignIn = () => {
     <div className="flex flex-col items-center justify-center mt-8 min-h-[100px] min-w-[250px]">
       <h1 className="text-2xl font-bold text-blue-500 mb-4">Google Sign-In</h1>
 
-      <GoogleOAuthProvider clientId="338736050338-p45edhtf3sn7ceak7u81l085u8ovebds.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId="326727425929-i2fb6lhq2p69u1pr639q3bmieho6c15k.apps.googleusercontent.com">
         <GoogleLogin 
           onSuccess={handleSuccess}
           onError={handleError}
