@@ -2,6 +2,7 @@ import { useState } from 'react';
 import cowImg from 'file:///C:/Users/promaxsys/Downloads/reg.webp'; 
 import './App.css';
 
+
 function App() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-100 px-4">
@@ -9,7 +10,7 @@ function App() {
         
         {/* Left Image Panel */}
         <div className="md:w-1/2 flex items-center justify-center bg-white p-4 ">
-          <img src={cowImg} alt="Cow" className="w-3/4 h-auto" />
+          <img src={cowImg} alt="Cow" className="w-3/4 h-auto rounded-md" />
         </div>
 
         {/* Right Form Panel */}
@@ -30,7 +31,7 @@ function App() {
               <input type="password" placeholder="Confirm Password" className="border p-2 rounded-md w-full" />
             </div>
 
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md w-full mt-2">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md w-full mt-2" onClick={()=>alert("Create a Account Successfully")}>
               Create Account
             </button>
           </form>
@@ -56,8 +57,10 @@ function App() {
         </div>
       </div>
     </div>
+    
   );
 }
 
 export default App;
+
 
