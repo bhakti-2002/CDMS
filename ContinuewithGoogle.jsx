@@ -5,7 +5,6 @@ import { jwtDecode } from 'jwt-decode';
 const GoogleSignIn = () => {
   const handleSuccess = (credentialResponse) => {
     console.log("Google Sign In Success", credentialResponse);
-    //send this credential to bakend api and authenticate
     const decode = jwtDecode(credentialResponse?.credential)
     console.log(decode)
   }
