@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; //  Import this
+import { useNavigate } from "react-router-dom"; 
 
 const ForgotPassword = () => {
   const [inputValue, setInputValue] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
-  const navigate = useNavigate(); //  Initialize navigate
+  const navigate = useNavigate(); 
 
   const handleSearch = () => {
     if (inputValue.trim() === "") {
@@ -21,7 +21,7 @@ const ForgotPassword = () => {
   const handleCancel = () => {
     setInputValue("");
     setErrorMsg("");
-    navigate("/"); //  Navigate back to login
+    navigate("/"); 
   };
 
   return (
