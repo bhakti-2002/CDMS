@@ -1,24 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { GoogleLogin } from '@react-oauth/google';
-import { jwtDecode } from 'jwt-decode';
 import phoneImage from 'file:///C:/Users/promaxsys/Downloads/login.webp'; 
 
 function Login() {
-  
-  // const loginWithGoogle = useGoogleLogin({
-  //   onSuccess: (tokenResponse) => {
-  //     const user = jwtDecode(tokenResponse.credential || tokenResponse.access_token);
-  //     console.log("Google Sign-In Success:", user);
-  //     alert(`Welcome, ${user.name}`);
-  //   },
-  //   onError: () => {
-  //     console.log("Google Sign-In Error");
-  //     alert("Google Sign-In failed");
-  //   },
-  //   flow: 'implicit',
-  // });
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-100 px-4">
       <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden max-w-4xl w-full">
@@ -80,13 +64,10 @@ function Login() {
                       </Link>
                     </p>
 
-             <button
-       
-        className="w-full bg-red-200 text-red-700 font-medium py-2 rounded-full hover:bg-red-300 transition"
-      >
-        Sign in with Google
-      </button>
-      
+            <button className="w-full bg-red-200 text-red-700 font-medium py-2 rounded-full hover:bg-red-300 transition">
+              Sign in with Google
+            </button>
+           
           </form>
           
         </div>
