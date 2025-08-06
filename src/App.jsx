@@ -4,7 +4,7 @@ import Login from './Login';
 import ForgotPassword from './Forgotpass';
 import Register from './Register';
 import ContinueWithGoogle from './Continuewithgoogle';
-
+import MilkCollectionForm from './MilkCollection';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword/>} />
          <Route path="/register" element={<Register />} />
         <Route path="/ContinueWithGoogle" element={<ContinueWithGoogle />} />
+        <Route path="/milk-collection" element={<MilkCollectionForm />} />
 
       </Routes>
     </Router>

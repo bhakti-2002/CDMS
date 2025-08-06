@@ -1,9 +1,12 @@
+// src/ContinueWithGoogle.jsx
 import React from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 const ContinueWithGoogle = () => {
+  const navigate = useNavigate();
+
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       try {
@@ -17,7 +20,8 @@ const ContinueWithGoogle = () => {
         );
         console.log("Google User Info:", res.data);
         alert(`Welcome, ${res.data.name}`);
-        // Optional: Save to localStorage or backend
+        localStorage.setItem("user", JSON.stringify(res.data));
+        navigate("/dashboard"); // Change to your route
       } catch (err) {
         console.error("Failed to fetch user info", err);
       }
@@ -29,10 +33,15 @@ const ContinueWithGoogle = () => {
   });
 
   return (
-    <button 
-    className="w-full bg-red-200 text-red-700 font-medium py-2 rounded-full hover:bg-red-300 transition"
+    <button
+      className="w-full flex items-center justify-center gap-2 bg-red-200 text-red-700 font-medium py-2 rounded-full hover:bg-red-300 transition"
       onClick={() => login()}
     >
+      <img
+        src="https://img.icons8.com/color/24/000000/google-logo.png"
+        alt="Google"
+        className="w-5 h-5"
+      />
       Sign in with Google
     </button>
   );

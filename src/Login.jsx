@@ -53,22 +53,20 @@ function Login() {
             <button
               type="submit"
               className="w-full bg-blue-600 text-white py-2 rounded-full font-semibold hover:bg-blue-700 transition"
-              onClick={() => alert("Login Successful")}
+              onClick={() => alert("Login Successfully")}
             >
               Sign in
             </button>
 
-            <p className="text-center text-sm ">
+            <p className="text-center text-sm">
               Don't have an Account?{' '}
               <Link to="/register" className="text-black underline font-semibold">
                 Register
               </Link>
             </p>
 
-           
-            <div className="w-full bg-red-300 text-red-700 font-medium py-2 rounded-full hover:bg-red-400 transition">
-
-          
+            {/* Google Sign-In */}
+            <div className="mt-2">
               <ContinueWithGoogle />
             </div>
           </form>
